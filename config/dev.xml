@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<configuration>
+    <base>
+        <core>
+
+            <production>false</production>
+
+            <languages>nl,fr,en</languages>
+
+            <log>
+                <level>INFO</level>
+            </log>
+
+            <http>
+                <hostname>localhost</hostname>
+                <port>8080</port>
+            </http>
+
+            <domain>
+                <main>http://localhost:8080/</main>
+            </domain>
+
+            <system-properties />
+
+            <context>
+                <local>
+                    <root>/home/bram/Projects/stralo/storage/</root>
+                </local>
+            </context>
+
+            <resources>
+                <custom-folders />
+                <parsed-folder />
+                <memory-cache />
+                <hot-reload />
+                <pack>false</pack>
+                <minify>false</minify>
+                <async>false</async>
+                <fingerprint>
+                    <enable>false</enable>
+                    <enable-style-inline>false</enable-style-inline>
+                    <enable-style-external>false</enable-style-external>
+                    <enable-script-inline>false</enable-script-inline>
+                    <enable-script-external>false</enable-script-external>
+                    <enable-template>false</enable-template>
+                </fingerprint>
+                <inline>
+                    <enable>false</enable>
+                    <style-threshold />
+                    <script-threshold />
+                    <style-total-threshold />
+                    <script-total-threshold />
+                    <total-threshold />
+                </inline>
+            </resources>
+
+            <security>
+                <cipher-key>7irVfdBdJGsvUBn/lCaycQ==</cipher-key>
+            </security>
+        </core>
+    </base>
+
+    <blocks>
+        <core>
+
+            <resources />
+
+            <pages />
+
+            <rdf>
+                <ontology>
+                    <prefix>sto</prefix>
+                    <uri>http://www.stralo.com/ontology/</uri>
+                </ontology>
+            </rdf>
+
+            <geonames>
+                <!--<username>mot.be</username>-->
+                <username>beligum</username>
+                <!--<username>beligum_dev</username>-->
+            </geonames>
+        </core>
+
+        <media>
+            <webhdfs>
+                <enable-auto-proxy>true</enable-auto-proxy>
+            </webhdfs>
+
+            <watch>
+                <grid-processor>
+                    <enable>true</enable>
+                    <check-on-start>false</check-on-start>
+                    <disable-monitor>false</disable-monitor>
+                    <server>
+                        <port>11111</port>
+                    </server>
+                    <jppf-properties>
+                        <property>
+                            <name>processing.threads</name>
+                            <value>1</value>
+                        </property>
+                    </jppf-properties>
+                </grid-processor>
+
+                <parser-presets>
+                    <parser-preset>
+                        <mime-type-pattern>image/*</mime-type-pattern>
+                        <class>com.beligum.blocks.media.proxy.presets.DefaultImagePreset</class>
+                    </parser-preset>
+                    <parser-preset>
+                        <mime-type-pattern>video/*</mime-type-pattern>
+                        <class>com.beligum.blocks.media.proxy.presets.DefaultVideoPreset</class>
+                    </parser-preset>
+                </parser-presets>
+            </watch>
+        </media>
+
+        <imports>
+            <row>
+                <enable-background-image-config>true</enable-background-image-config>
+                <enable-background-position-config>true</enable-background-position-config>
+                <enable-background-repeat-config>true</enable-background-repeat-config>
+                <enable-background-size-config>true</enable-background-size-config>
+            </row>
+            <column>
+                <enable-background-image-config>true</enable-background-image-config>
+                <enable-background-position-config>true</enable-background-position-config>
+                <enable-background-repeat-config>true</enable-background-repeat-config>
+                <enable-background-size-config>true</enable-background-size-config>
+            </column>
+        </imports>
+    </blocks>
+
+    <stralo>
+        <site>
+            <google-analytics-key>UA-10275393-29</google-analytics-key>
+        </site>
+    </stralo>
+
+</configuration>

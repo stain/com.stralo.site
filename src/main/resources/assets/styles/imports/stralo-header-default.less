@@ -1,0 +1,101 @@
+//-----IMPORTS-----
+@import (reference) "/assets/styles/commons.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/mixins/forms.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/mixins/vendor-prefixes.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/mixins/nav-vertical-align.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/mixins/border-radius.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/mixins/tab-focus.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/mixins/hide-text.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/mixins/center-block.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/utilities.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/forms.less";
+@import (reference) "/assets/webjars/bootstrap/3.3.4/less/navbar.less";
+
+//-----STYLES-----
+body {
+  //For fixed-navbar; see https://getbootstrap.com/examples/navbar-fixed-top/
+  //needed to push the body content past the height of the fixed navbar
+  //Disabled (switched to navbar-static-top) because the vanilla version doesn't work too well with our sidebar
+  //+1 because of the extra border at the bottom it introduces
+  //see below why we eliminated the @navbar-margin-bottom
+  padding-top: @navbar-height /*+ @navbar-margin-bottom*/ + 1;
+
+  //blocks-layout will trigger the 'container' of the editable pages
+  //the first level container should trigger the other (eg. login) templates
+  blocks-layout,
+  & > .container {
+    //see below
+    padding-top: @navbar-margin-bottom;
+  }
+
+  //edit-mode container
+  .@{PAGE_CONTENT_CLASS} {
+    stralo-header-default {
+      //inherit the width from the content wrapper instead of using full width
+      width: inherit;
+    }
+  }
+}
+
+stralo-header-default {
+  //copied over from .navbar-fixed-top
+  //don't apply the fixed header to the .navbar, it messes up the edit mode width
+  //Note that if you don't want a fixed header, you'll need to remove the padding on the body too
+  position: fixed;
+  top: 0;
+  z-index: @zindex-navbar-fixed;
+  border-width: 0 0 1px;
+  width: 100%;
+
+  //because we use a different variables than bootstrap (@navbar-height)
+  .navbar {
+    min-height: @navbar-height;
+  }
+  .navbar-brand {
+    height: @navbar-height;
+  }
+
+  .navbar {
+    //use the default bootstrap background and navbar theme
+    .navbar-default;
+    //remove the borders and some shadows to make it look better at the top of the page
+    .navbar-static-top;
+
+    //we'll eliminate the default bootstrap margin-bottom (stored in @navbar-margin-bottom)
+    //to allow the blocks-layout tag to have a background color different from the body color
+    //If we use a margin bottom here, the blocks-layout will have a gap between its top and the header
+    margin-bottom: 0;
+  }
+}
+
+//-----STYLES-----
+stralo-header-default {
+  .navbar {
+    //reset bootstrap
+    border-bottom: none;
+    //[horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]
+    .box-shadow(0 @header-shadow-size @header-shadow-size -@header-shadow-size darken(@header-shadow-color, 50%));
+
+    background-color: @header-bg-color;
+
+    .navbar-nav > li > a {
+      color: @header-color;
+      text-decoration: none;
+    }
+
+    .navbar-brand {
+      //adjust the default padding
+      padding: 5px;
+
+      img {
+        height: 100%;
+        width: auto;
+      }
+    }
+
+    .navbar-brand {
+      //padding-top: 0px;
+      //padding-bottom: 0px;
+    }
+  }
+}

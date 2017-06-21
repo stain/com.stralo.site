@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html data-template>
+
+<head>
+
+    <meta property="blocks:title" content="$MESSAGES.mot.core.pageEmptyTitle">
+    <meta property="blocks:description" content="$MESSAGES.mot.core.pageEmptyDescription">
+
+    <title property="title">$MESSAGES.blocks.core.defaultPageTitle</title>
+
+    <meta property="sameAs" datatype="xsd:anyURI"/>
+
+    <stralo-head-default data-render-tag=""></stralo-head-default>
+
+    <link href="/assets/styles/imports/stralo-page-empty.less" rel="stylesheet">
+
+</head>
+
+<body>
+
+<stralo-header-default></stralo-header-default>
+
+#parse("/views/snippets/feedback.html")
+<blocks-layout data-property="content"></blocks-layout>
+$!body-html
+
+<stralo-footer-default></stralo-footer-default>
+
+<stralo-foot-default></stralo-foot-default>
+
+</body>
+
+</html>

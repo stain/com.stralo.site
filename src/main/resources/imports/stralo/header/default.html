@@ -1,0 +1,26 @@
+<meta property="blocks:display" content="hidden">
+
+<link href="/assets/styles/imports/stralo-header-default.less" rel="stylesheet">
+
+<template>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">$MESSAGES.stralo.site.navbarToggle</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                ##<a class="navbar-brand" href="$CONSTANTS.stralo.site.NAVBAR_HOME"><img src="/assets/images/ror_logo.png"></a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="$CONSTANTS.stralo.site.NAVBAR_HOME">$MESSAGES.stralo.site.navbarHome</a></li>
+                    <li><a href="$CONSTANTS.stralo.site.NAVBAR_ABOUT">$MESSAGES.stralo.site.navbarAbout</a></li>
+                    <li><a href="$CONSTANTS.stralo.site.NAVBAR_CONTACT">$MESSAGES.stralo.site.navbarContact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</template>

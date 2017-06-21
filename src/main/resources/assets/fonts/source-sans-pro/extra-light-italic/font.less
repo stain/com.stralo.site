@@ -1,0 +1,16 @@
+//-----IMPORTS-----
+@import (reference) "/assets/fonts/source-sans-pro/variables.less";
+
+//-----STYLES-----
+@font-path: '@{font-base-path}/extra-light-italic';
+@font-face{
+  font-family: @font-name;
+  font-weight: 200;
+  font-style: italic;
+  font-stretch: normal;
+  src: url("@{font-path}/@{font-base-file}.eot") format("embedded-opentype"),
+  url("@{font-path}/@{font-base-file}.ttf.woff2") format("woff2"),
+  url("@{font-path}/@{font-base-file}.otf.woff") format("woff"),
+  url("@{font-path}/@{font-base-file}.otf") format("opentype"),
+  url("@{font-path}/@{font-base-file}.ttf") format("truetype");
+}

@@ -1,0 +1,61 @@
+<meta property="blocks:display" content="hidden">
+
+<template>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    $!header-meta-extra
+
+## FAVICON
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+## STYLES
+
+## the admin styles (the attribute makes the wrapping tag not render out)
+    <blocks-styles data-render-tag=""></blocks-styles>
+
+## all main styles outside of the imports
+    <link href="/assets/styles/styles.less" rel="stylesheet"/>
+
+## additional widget styles
+    <link href="/assets/styles/imports/stralo-row.less" rel="stylesheet"/>
+    <link href="/assets/styles/imports/stralo-column.less" rel="stylesheet"/>
+
+## all styles above will get eaten and spit out here again
+    #blocksTagResources("styles")
+
+    $!header-styles-extra
+
+## SCRIPTS
+
+##the scripts of the admin side (the attribute makes the wrapping tag not render out)
+    <blocks-scripts data-render-tag=""></blocks-scripts>
+
+    <script src="/constants/stralo/site?type=js" type="application/javascript"></script>
+    <script src="/messages/stralo/site?type=js" type="application/javascript"></script>
+
+## needed to render the row sidebar widget (eg. to adjust the bg color of a row)
+    <script src="/assets/scripts/imports/stralo-row.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/scripts/imports/stralo-column.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+
+    $!header-scripts-extra
+
+</template>

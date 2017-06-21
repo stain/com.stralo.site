@@ -1,0 +1,82 @@
+//-----IMPORTS-----
+@import (reference) "/assets/styles/commons.less";
+
+//-----STICKY-FOOTER-----
+// Styling for sticky footer
+// we're using the 'There is negative bottom margins on wrappers' technique to push the footer down
+// see https://css-tricks.com/couple-takes-sticky-footer/
+// Mainly because we want to push the container all the way to the bottom too
+html, body {
+  height: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  //blocks-layout will trigger the 'container' of the editable pages
+  //the first level container should trigger the other (eg. login) templates
+  blocks-layout,
+  & > .container {
+    min-height: 100%;
+    margin-bottom: -@footer-height;
+
+    //the pusher
+    .clearfix();
+    &:after {
+      height: @footer-height;
+    }
+  }
+}
+stralo-footer-default {
+  height: @footer-height;
+  //make sure the content can't make it grow larger
+  //Disabled because it doesn't make sense on mobile devices where the footer will
+  //quickly grow beyond this height if it's small. The result will be
+  //a sticky footer of height @footer-height, but scrollable further to the bottom
+  //to see the overflowed rest of it
+  //overflow-y: hidden;
+}
+
+//-----STYLES-----
+stralo-footer-default {
+
+  footer {
+    .top,
+    .bottom {
+      p {
+        margin: 0;
+        font-size: 0.9em;
+        line-height: 2;
+
+        a {
+          text-decoration: none;
+        }
+      }
+    }
+    .top {
+      min-height: @footer-height * @footer-top-pct;
+      color: #ffffff - @footer-top-bg-color;
+      background-color: @footer-top-bg-color;
+
+      //[horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]
+      .box-shadow(inset 0 @footer-shadow-size @footer-shadow-size -@footer-shadow-size @footer-shadow-color);
+
+      p {
+        //a fixed line height messed up the overflow on mobile,
+        //line-height: @footer-height * @footer-top-pct;
+        //factor 5 found using trial-and-error
+        padding-top: (@footer-height * @footer-top-pct)/5;
+      }
+    }
+    .bottom {
+      min-height: @footer-height * @footer-bottom-pct;
+      color: #ffffff - @footer-bottom-bg-color;
+      background-color: @footer-bottom-bg-color;
+
+      p {
+        //a fixed line height messed up the overflow on mobile
+        //line-height: @footer-height * @footer-bottom-pct;
+        //factor 5 found using trial-and-error
+        padding-top: (@footer-height * @footer-bottom-pct)/5;
+      }
+    }
+  }
+}

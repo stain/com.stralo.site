@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.stralo.site</groupId>
+    <artifactId>stralo-site</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <url>http://www.stralo.com</url>
+
+    <parent>
+        <groupId>com.beligum</groupId>
+        <artifactId>parent-web</artifactId>
+        <version>1.0.2</version>
+    </parent>
+
+    <properties>
+        <git.url.repo.name>${git.url.repo.prefix}stralo.site</git.url.repo.name>
+    </properties>
+
+    <scm>
+        <connection>${git.scm.url}</connection>
+    </scm>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.beligum.blocks</groupId>
+            <artifactId>blocks-core</artifactId>
+            <version>0.3.32</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.beligum.blocks</groupId>
+            <artifactId>blocks-media-core</artifactId>
+            <version>0.3.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.beligum.blocks</groupId>
+            <artifactId>blocks-media-proxy</artifactId>
+            <version>0.1.4</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.beligum.blocks</groupId>
+            <artifactId>blocks-imports-pack</artifactId>
+            <version>1.0.24</version>
+        </dependency>
+
+    </dependencies>
+
+    <build>
+        <plugins></plugins>
+    </build>
+
+</project>
