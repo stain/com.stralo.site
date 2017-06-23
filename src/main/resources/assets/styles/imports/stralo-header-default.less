@@ -11,14 +11,17 @@
 @import (reference) "/assets/webjars/bootstrap/3.3.4/less/forms.less";
 @import (reference) "/assets/webjars/bootstrap/3.3.4/less/navbar.less";
 
-//-----STYLES-----
+//-----FIXED HEADER TOP STYLES-----
+@header-border-bottom-size: 0px;
 body {
   //For fixed-navbar; see https://getbootstrap.com/examples/navbar-fixed-top/
   //needed to push the body content past the height of the fixed navbar
   //Disabled (switched to navbar-static-top) because the vanilla version doesn't work too well with our sidebar
   //+1 because of the extra border at the bottom it introduces
   //see below why we eliminated the @navbar-margin-bottom
-  padding-top: @navbar-height /*+ @navbar-margin-bottom*/ + 1;
+  & when (@header-fixed = true) {
+    padding-top: @navbar-height /*+ @navbar-margin-bottom*/ + @header-border-bottom-size;
+  }
 
   //blocks-layout will trigger the 'container' of the editable pages
   //the first level container should trigger the other (eg. login) templates
@@ -41,10 +44,12 @@ stralo-header-default {
   //copied over from .navbar-fixed-top
   //don't apply the fixed header to the .navbar, it messes up the edit mode width
   //Note that if you don't want a fixed header, you'll need to remove the padding on the body too
-  position: fixed;
-  top: 0;
-  z-index: @zindex-navbar-fixed;
-  border-width: 0 0 1px;
+  & when (@header-fixed = true) {
+    position: fixed;
+    top: 0;
+    z-index: @zindex-navbar-fixed;
+  }
+  border-width: 0 0 @header-border-bottom-size 0;
   width: 100%;
 
   //because we use a different variables than bootstrap (@navbar-height)
@@ -68,34 +73,71 @@ stralo-header-default {
   }
 }
 
-//-----STYLES-----
+//-----CUSTOM STYLES-----
 stralo-header-default {
+
   .navbar {
     //reset bootstrap
     border-bottom: none;
-    //[horizontal offset] [vertical offset] [blur radius] [optional spread radius] [color]
-    .box-shadow(0 @header-shadow-size @header-shadow-size -@header-shadow-size darken(@header-shadow-color, 50%));
 
+    padding-top: @header-margin-top;
     background-color: @header-bg-color;
 
-    .navbar-nav > li > a {
-      color: @header-color;
-      text-decoration: none;
+    //this is the first div that has the width of the container
+    .container {
+      border: @header-border-size solid @color-primary;
+      .stralo-shadow(@header-shadow-size, @header-border-size, @header-shadow-color, @header-shadow-color-inv);
     }
 
     .navbar-brand {
-      //adjust the default padding
-      padding: 5px;
+      padding-left: 25px;
+    }
 
-      img {
-        height: 100%;
-        width: auto;
+    //make the mobile version prettier
+    .nav {
+      @half-gutter: (@grid-gutter-width / 2);
+
+      margin-top: 0;
+      margin-bottom: 0;
+
+      li {
+        padding: @half-gutter @half-gutter 0 @half-gutter;
+        &:last-child {
+          padding-bottom: @half-gutter;
+        }
+
+        @media (min-width: @screen-md-min) {
+          padding-top: 28px;
+        }
+
+        a {
+          padding: 0;
+          text-transform: uppercase;
+          letter-spacing: 1.4px;
+          color: @header-link-color;
+
+          &:hover,
+          &.active {
+            color: @header-link-color-active;
+          }
+        }
       }
     }
 
-    .navbar-brand {
-      //padding-top: 0px;
-      //padding-bottom: 0px;
+    .navbar-toggle {
+      .border-radius(0);
+      background-color: @header-bg-color !important; //sometimes the bg seems to switch to gray...
+      border-color: @color-primary;
+      .icon-bar {
+        background-color: @color-primary;
+      }
+
+      &[aria-expanded='true'] {
+        background-color: @color-primary !important;
+        .icon-bar {
+          background-color: @header-bg-color;
+        }
+      }
     }
   }
 }

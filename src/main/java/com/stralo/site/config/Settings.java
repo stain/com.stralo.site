@@ -22,6 +22,7 @@ public class Settings
         if (Settings.instance == null) {
             Settings.instance = new Settings();
         }
+
         return Settings.instance;
     }
 

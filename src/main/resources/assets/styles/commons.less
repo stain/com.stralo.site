@@ -14,3 +14,140 @@
 
 @import (reference) "/constants/blocks/core?type=less";
 @import (reference) "/constants/stralo/site?type=less";
+
+//-----MIXINS-----
+.stralo-shadow(@shadow-size: 10px, @border-size: 0px, @shadow-color: #000000, @shadow-color-inv: #FFFFFF, @direction: down, @method: default) {
+
+  //triangle method, see http://apps.eky.hk/css-triangle-generator/
+  .clearfix;
+  position: relative;
+
+  & when (@direction = down) {
+    margin-bottom: @shadow-size; //push the next item past the shadow
+  }
+  & when (@direction = up) {
+    margin-top: @shadow-size; //push the next item past the shadow
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+
+    & when (@direction = down) {
+      bottom: -@shadow-size - @border-size;//move the entire block below the parent container, plus the height of it's border
+    }
+    & when (@direction = up) {
+      top: -@shadow-size - @border-size;//move the entire block below the parent container, plus the height of it's border
+    }
+
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  &:before {
+    left: -@border-size;//make the left side of the triangle fit the left side of the parent's border
+    //margin-right: -1px;//this seems to help in case of small widths when rounding errors are visible
+
+    //we'll use the before block to fill in the entire background
+    width: 100%;
+    background-color: @shadow-color;
+
+    //create the left triangle
+    & when (@direction = down) {
+      border-width: @shadow-size 0 0 @shadow-size;
+      border-color: transparent transparent transparent @shadow-color-inv;
+    }
+    & when (@direction = up) {
+      border-width: 0 0 @shadow-size @shadow-size;
+      border-color: transparent transparent transparent @shadow-color-inv;
+    }
+  }
+  &:after {
+    & when (@method = default) {
+      right: -@border-size; //make the right side of the triangle fit the right side of the parent's border
+    }
+    //Note: using a standard absolute-in-relative positioning messes up the flow (actually the clearfix) of a bootstrap row,
+    //      so we pull the right triangle out of the flow and position it with a little workaround
+    & when (@method = row) {
+      position: relative;
+      margin: 0 0 0 auto;
+      //activate this when you activate the "fake fluid container" in page-empty.less
+      //right: -(@grid-gutter-width / 2);
+    }
+
+    //create the right triangle
+    & when (@direction = down) {
+      border-width: 0 0 @shadow-size @shadow-size;
+      border-color: transparent transparent @shadow-color-inv @shadow-color; //note that we need to fill the background of the triangle because of the offset shift above
+    }
+    & when (@direction = up) {
+      border-width: @shadow-size 0 0 @shadow-size;
+      border-color: transparent transparent @shadow-color-inv @shadow-color; //note that we need to fill the background of the triangle because of the offset shift above
+      background-color: @shadow-color-inv;
+    }
+
+    z-index: 100;//pull the right triangle in front of the full-width background of the left triangle
+  }
+}
+.add-style-base(@row-or-col) {
+  & {
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      //text-transform: uppercase;
+      //font-variant: small-caps;
+      letter-spacing: 2px;
+    }
+  }
+}
+.add-style-1(@row-or-col) {
+  &.@{STYLE_1_CLASS} {
+
+    .stralo-shadow(@method: @row-or-col);
+
+    background-color: @color-primary;
+    color: @color-primary-inv;
+
+    h1, h2, h3, h4, h5, h6,
+    .h1, .h2, .h3, .h4, .h5, .h6 {
+      color: @color-primary-inv;
+    }
+  }
+}
+.add-style-2(@row-or-col) {
+  &.@{STYLE_2_CLASS} {
+    border-top: 1px solid @color-primary;
+    border-left: 1px solid @color-primary;
+    border-right: 1px solid @color-primary;
+    border-bottom: 1px solid #000000;
+    background: url('/assets/images/bg_pattern_1.png') repeat;
+    .stralo-shadow(@border-size: 1px, @method: @row-or-col);
+
+    blocks-text {
+      background-color: #ffffff;
+      padding: 0px 15px 5px 15px;
+
+      //setting the padding-top above to something other than zero, pulls up the background all the way to the top,
+      //apparently; this is a sort of workaround to attain the desired effect
+      h1:first-of-type,
+      .h1:first-of-type {
+        padding-top: 15px;
+      }
+
+      h1, h2, h3, h4, h5, h6,
+      .h1, .h2, .h3, .h4, .h5, .h6 {
+
+      }
+    }
+  }
+}
+.add-style-3(@row-or-col) {
+  &.@{STYLE_3_CLASS} {
+    border: 3px solid @color-primary;
+    .stralo-shadow(@border-size: 3px);
+  }
+}
+.add-style-4(@row-or-col) {
+  &.@{STYLE_4_CLASS} {
+
+  }
+}

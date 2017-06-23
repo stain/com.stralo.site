@@ -27,29 +27,26 @@ html, body {
   blocks-layout {
     //we'll pull open the default container, actually making it a standard container-fluid
     //and give widths to all first-level rows instead to make variable row-widths possible
-    .container {
-      width: auto;
-      padding-left: 0;
-      padding-right: 0;
-
-      & > .row {
-
-        .container-fixed();
-        @media (min-width: @screen-sm-min) {
-          width: @container-sm;
-        }
-        @media (min-width: @screen-md-min) {
-          width: @container-md;
-        }
-        @media (min-width: @screen-lg-min) {
-          width: @container-lg;
-        }
-
-        &.@{FLUID_CLASS} {
-          //width: auto;
-        }
-      }
-    }
+    //Note: disabled this for now because it messes up the styling when the edit drawer is open
+    //.container {
+    //  width: auto;
+    //  padding-left: 0;
+    //  padding-right: 0;
+    //
+    //  & > .row {
+    //
+    //    .container-fixed();
+    //    @media (min-width: @screen-sm-min) {
+    //      width: @container-sm;
+    //    }
+    //    @media (min-width: @screen-md-min) {
+    //      width: @container-md;
+    //    }
+    //    @media (min-width: @screen-lg-min) {
+    //      width: @container-lg;
+    //    }
+    //  }
+    //}
   }
 
 }

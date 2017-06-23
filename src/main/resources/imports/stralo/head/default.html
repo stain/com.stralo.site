@@ -32,9 +32,6 @@
 ## the admin styles (the attribute makes the wrapping tag not render out)
     <blocks-styles data-render-tag=""></blocks-styles>
 
-## all main styles outside of the imports
-    <link href="/assets/styles/styles.less" rel="stylesheet"/>
-
 ## additional widget styles
     <link href="/assets/styles/imports/stralo-row.less" rel="stylesheet"/>
     <link href="/assets/styles/imports/stralo-column.less" rel="stylesheet"/>
@@ -49,10 +46,16 @@
 ##the scripts of the admin side (the attribute makes the wrapping tag not render out)
     <blocks-scripts data-render-tag=""></blocks-scripts>
 
+    <script src="/constants/blocks/imports/row?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/messages/blocks/imports/row?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/scripts/imports/row.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+
+    <script src="/constants/blocks/imports/column?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/messages/blocks/imports/column?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/scripts/imports/column.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+
     <script src="/constants/stralo/site?type=js" type="application/javascript"></script>
     <script src="/messages/stralo/site?type=js" type="application/javascript"></script>
-
-## needed to render the row sidebar widget (eg. to adjust the bg color of a row)
     <script src="/assets/scripts/imports/stralo-row.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
     <script src="/assets/scripts/imports/stralo-column.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
 
