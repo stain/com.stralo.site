@@ -5,7 +5,7 @@
 
     <groupId>com.stralo.site</groupId>
     <artifactId>stralo-site</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.3</version>
     <packaging>jar</packaging>
 
     <url>http://www.stralo.com</url>
@@ -46,7 +46,7 @@
         <dependency>
             <groupId>com.beligum.blocks</groupId>
             <artifactId>blocks-imports-pack</artifactId>
-            <version>1.0.24</version>
+            <version>1.0.27</version>
         </dependency>
 
     </dependencies>
