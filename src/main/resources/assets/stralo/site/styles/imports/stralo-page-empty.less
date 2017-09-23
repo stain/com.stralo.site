@@ -1,0 +1,68 @@
+/*
+ * Copyright 2017 Republic of Reinvention bvba. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+//-----IMPORTS-----
+@import (reference) "/assets/stralo/site/styles/commons.less";
+
+//-----STYLES-----
+html, body {
+
+  ////blocks-layout will trigger the 'container' of the editable pages
+  ////the first level container should trigger the other (eg. login) templates
+  //blocks-layout,
+  //& > .container {
+  //  //we need to mimic a default container a bit
+  //  //to make the centered background color work
+  //  margin-left: auto;
+  //  margin-right: auto;
+  //  @media (min-width: @screen-sm-min) {
+  //    width: @container-sm;
+  //  }
+  //  @media (min-width: @screen-md-min) {
+  //    width: @container-md;
+  //  }
+  //  @media (min-width: @screen-lg-min) {
+  //    width: @container-lg;
+  //  }
+  //}
+
+  //we'll only do this for the main layout and leave other layouts (eg. login page) at default bootstrap containers
+  blocks-layout {
+    //we'll pull open the default container, actually making it a standard container-fluid
+    //and give widths to all first-level rows instead to make variable row-widths possible
+    //Note: disabled this for now because it messes up the styling when the edit drawer is open
+    //.container {
+    //  width: auto;
+    //  padding-left: 0;
+    //  padding-right: 0;
+    //
+    //  & > .row {
+    //
+    //    .container-fixed();
+    //    @media (min-width: @screen-sm-min) {
+    //      width: @container-sm;
+    //    }
+    //    @media (min-width: @screen-md-min) {
+    //      width: @container-md;
+    //    }
+    //    @media (min-width: @screen-lg-min) {
+    //      width: @container-lg;
+    //    }
+    //  }
+    //}
+  }
+
+}

@@ -9,22 +9,22 @@
     $!header-meta-extra
 
 ## FAVICON
-    <link rel="apple-touch-icon" sizes="57x57" href="/assets/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/assets/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/assets/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/assets/images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/assets/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/assets/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/assets/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/assets/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/assets/images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/assets/images/favicon/manifest.json">
+    <link rel="apple-touch-icon" sizes="57x57" href="/assets/stralo/site/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/assets/stralo/site/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/assets/stralo/site/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/assets/stralo/site/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/assets/stralo/site/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/assets/stralo/site/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/assets/stralo/site/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/assets/stralo/site/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/stralo/site/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/stralo/site/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/stralo/site/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/assets/stralo/site/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/stralo/site/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/assets/stralo/site/images/favicon/manifest.json">
     <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/assets/images/favicon/ms-icon-144x144.png">
+    <meta name="msapplication-TileImage" content="/assets/stralo/site/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 
 ## STYLES
@@ -33,10 +33,11 @@
     <blocks-styles data-render-tag=""></blocks-styles>
 
 ## additional widget styles
-    <link href="/assets/styles/imports/blocks-row.less" rel="stylesheet">
-    <link href="/assets/styles/imports/blocks-column.less" rel="stylesheet">
-    <link href="/assets/styles/imports/stralo-row.less" rel="stylesheet"/>
-    <link href="/assets/styles/imports/stralo-column.less" rel="stylesheet"/>
+    <link href="/assets/blocks/imports/commons/styles/main.less" rel="stylesheet">
+    <link href="/assets/blocks/imports/row/styles/main.less" rel="stylesheet">
+    <link href="/assets/blocks/imports/column/styles/main.less" rel="stylesheet">
+    <link href="/assets/stralo/site/styles/imports/stralo-row.less" rel="stylesheet"/>
+    <link href="/assets/stralo/site/styles/imports/stralo-column.less" rel="stylesheet"/>
 
 ## all styles above will get eaten and spit out here again
     #blocksTagResources("styles")
@@ -48,18 +49,22 @@
 ##the scripts of the admin side (the attribute makes the wrapping tag not render out)
     <blocks-scripts data-render-tag=""></blocks-scripts>
 
+    <script src="/constants/blocks/imports/commons?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/messages/blocks/imports/commons?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/blocks/imports/commons/scripts/admin.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+
     <script src="/constants/blocks/imports/row?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
     <script src="/messages/blocks/imports/row?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
-    <script src="/assets/scripts/imports/row.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/blocks/imports/row/scripts/admin.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
 
     <script src="/constants/blocks/imports/column?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
     <script src="/messages/blocks/imports/column?type=js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
-    <script src="/assets/scripts/imports/column.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/blocks/imports/column/scripts/admin.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
 
     <script src="/constants/stralo/site?type=js" type="application/javascript"></script>
     <script src="/messages/stralo/site?type=js" type="application/javascript"></script>
-    <script src="/assets/scripts/imports/stralo-row.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
-    <script src="/assets/scripts/imports/stralo-column.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/stralo/site/scripts/imports/stralo-row.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
+    <script src="/assets/stralo/site/scripts/imports/stralo-column.js" type="application/javascript" data-scope-role="admin" data-scope-mode="edit"></script>
 
     $!header-scripts-extra
 

@@ -1,0 +1,41 @@
+/*
+ * Copyright 2017 Republic of Reinvention bvba. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+//-----LIBRARIES-----
+@import (reference) "/assets/stralo/site/styles/variables.less";
+
+//-----OVERRIDE BOOTSTRAP VARIABLES-----
+//Set this to make sure the font imports work when packed
+@icon-font-path: @bootstrap-font-path;
+
+@brand-primary: @color-primary;
+
+@text-color: @gray-darker;
+@font-family-sans-serif:  "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+@headings-color: @brand-primary;
+@headings-font-weight: 900;
+
+@font-size-h1:            floor((@font-size-base * 2.40));
+//@font-size-h2:            floor((@font-size-base * 2.15)); // ~30px
+//@font-size-h3:            ceil((@font-size-base * 1.7)); // ~24px
+//@font-size-h4:            ceil((@font-size-base * 1.25)); // ~18px
+//@font-size-h5:            @font-size-base;
+//@font-size-h6:            ceil((@font-size-base * 0.85)); // ~12px
+
+//@navbar-height: @header-height;
+@navbar-height: @header-height - (2 * @header-border-size); //note: bootstrap (and our css as well) expects this to be the inner height
+
+
