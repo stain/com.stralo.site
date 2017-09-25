@@ -25,9 +25,9 @@
         <version>2.0.0</version>
     </parent>
 
-    <groupId>com.stralo.site</groupId>
+    <groupId>com.stralo</groupId>
     <artifactId>stralo-site</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
 
     <url>http://www.stralo.com</url>

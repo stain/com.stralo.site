@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!--
+  ~ Copyright 2017 Republic of Reinvention bvba. All Rights Reserved.
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<configuration>
+    <base>
+        <core>
+
+            <production>false</production>
+
+            <languages>en</languages>
+
+            <log>
+                <level>INFO</level>
+            </log>
+
+            <http>
+                <hostname>localhost</hostname>
+                <port>8080</port>
+            </http>
+
+            <domain>
+                <main>http://localhost:8080/</main>
+            </domain>
+
+            <system-properties />
+
+            <context>
+                <local>
+                    <root></root>
+                </local>
+            </context>
+
+            <resources>
+                <custom-folders />
+                <parsed-folder />
+                <memory-cache />
+                <hot-reload />
+                <pack>false</pack>
+                <minify>false</minify>
+                <async>false</async>
+                <fingerprint>
+                    <enable>false</enable>
+                    <enable-style-inline>false</enable-style-inline>
+                    <enable-style-external>false</enable-style-external>
+                    <enable-script-inline>false</enable-script-inline>
+                    <enable-script-external>false</enable-script-external>
+                    <enable-template>false</enable-template>
+                </fingerprint>
+                <inline>
+                    <enable>false</enable>
+                    <style-threshold />
+                    <script-threshold />
+                    <style-total-threshold />
+                    <script-total-threshold />
+                    <total-threshold />
+                </inline>
+            </resources>
+
+            <security>
+                <cipher-key>7irVfdBdJGsvUBn/lCaycQ==</cipher-key>
+            </security>
+        </core>
+    </base>
+
+    <blocks>
+        <core>
+
+            <resources />
+
+            <pages />
+
+            <rdf>
+                <ontology>
+                    <prefix>sto</prefix>
+                    <uri>http://www.stralo.com/ontology/</uri>
+                </ontology>
+            </rdf>
+
+            <geonames>
+                <username>demo</username>
+            </geonames>
+        </core>
+
+        <media>
+            <webhdfs>
+                <enable-auto-proxy>true</enable-auto-proxy>
+            </webhdfs>
+
+            <watch>
+                <grid-processor>
+                    <enable>true</enable>
+                    <check-on-start>false</check-on-start>
+                    <disable-monitor>false</disable-monitor>
+                    <server>
+                        <port>11111</port>
+                    </server>
+                    <jppf-properties>
+                        <property>
+                            <name>processing.threads</name>
+                            <value>1</value>
+                        </property>
+                    </jppf-properties>
+                </grid-processor>
+
+                <parser-presets>
+                    <parser-preset>
+                        <mime-type-pattern>image/*</mime-type-pattern>
+                        <class>com.beligum.blocks.media.proxy.presets.DefaultImagePreset</class>
+                    </parser-preset>
+                    <parser-preset>
+                        <mime-type-pattern>video/*</mime-type-pattern>
+                        <class>com.beligum.blocks.media.proxy.presets.DefaultVideoPreset</class>
+                    </parser-preset>
+                </parser-presets>
+            </watch>
+        </media>
+
+        <imports>
+            <row>
+                <enable-seamless-config>true</enable-seamless-config>
+                <enable-aspect-ratio-config>true</enable-aspect-ratio-config>
+                <enable-hpadding-config>true</enable-hpadding-config>
+                <enable-vpadding-config>true</enable-vpadding-config>
+                <enable-background-color-config>true</enable-background-color-config>
+                <enable-background-image-config>true</enable-background-image-config>
+                <enable-background-position-config>true</enable-background-position-config>
+                <enable-background-repeat-config>true</enable-background-repeat-config>
+                <enable-background-size-config>true</enable-background-size-config>
+            </row>
+
+            <column>
+                <enable-hpadding-config>true</enable-hpadding-config>
+                <enable-vpadding-config>true</enable-vpadding-config>
+                <enable-background-color-config>true</enable-background-color-config>
+                <enable-background-color-config>true</enable-background-color-config>
+                <enable-background-image-config>true</enable-background-image-config>
+                <enable-background-position-config>true</enable-background-position-config>
+                <enable-background-repeat-config>true</enable-background-repeat-config>
+                <enable-background-size-config>true</enable-background-size-config>
+                <enable-valign-config>true</enable-valign-config>
+            </column>
+        </imports>
+    </blocks>
+
+    <stralo>
+        <site>
+            <google-analytics-key></google-analytics-key>
+        </site>
+    </stralo>
+
+</configuration>
