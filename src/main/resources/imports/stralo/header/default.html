@@ -17,7 +17,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     #set($urlPathNoLang=$REQUEST.uriInfo.path.substring(2))
-                    <li><a href="$CONSTANTS.stralo.site.NAVBAR_INFORMATION"#if($urlPathNoLang==$CONSTANTS.stralo.site.NAVBAR_INFORMATION) class="active"#end>$MESSAGES.stralo.site.navbarInformation</a></li>
+                    <li><a href="$CONSTANTS.stralo.site.NAVBAR_HOME"#if($urlPathNoLang==$CONSTANTS.stralo.site.NAVBAR_HOME) class="active"#end>$MESSAGES.stralo.site.navbarHome</a></li>
                     <li><a href="$CONSTANTS.stralo.site.NAVBAR_SERVICES"#if($urlPathNoLang==$CONSTANTS.stralo.site.NAVBAR_SERVICES) class="active"#end>$MESSAGES.stralo.site.navbarServices</a></li>
                     <li><a href="$CONSTANTS.stralo.site.NAVBAR_DOCUMENTATION"#if($urlPathNoLang==$CONSTANTS.stralo.site.NAVBAR_DOCUMENTATION) class="active"#end>$MESSAGES.stralo.site.navbarDocumentation</a></li>
                     <li><a href="$CONSTANTS.stralo.site.NAVBAR_CONTACT"#if($urlPathNoLang==$CONSTANTS.stralo.site.NAVBAR_CONTACT) class="active"#end>$MESSAGES.stralo.site.navbarContact</a></li>
