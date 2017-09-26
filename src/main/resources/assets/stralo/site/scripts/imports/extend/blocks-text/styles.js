@@ -31,9 +31,9 @@ base.plugin("stralo.imports.MediumEditorStyles", ["messages.blocks.imports.text"
         MediumEditor.setStylePickerStyles([
 
             {text: null, value: '<li class="dropdown-header">' + TextMessages.styles_sectionTitles + '</li>'},
-            {text: TextMessages.styles_h1, value: "h1:"},
             {text: StraloMessages.widgetTextStyles_h1Stralo, value: "h1:" + StraloConstants.TEXT_STYLES_H1_STRALO_CLASS},
             {text: StraloMessages.widgetTextStyles_h1Page, value: "h1:" + StraloConstants.TEXT_STYLES_H1_PAGE_CLASS},
+            {text: TextMessages.styles_h1, value: "h1:"},
             {text: TextMessages.styles_h2, value: "h2:"},
             {text: TextMessages.styles_h3, value: "h3:"},
             {text: null, value: '<li role="separator" class="divider"></li>'},
