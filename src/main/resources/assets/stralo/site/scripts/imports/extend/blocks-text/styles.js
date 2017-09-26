@@ -26,7 +26,7 @@ base.plugin("stralo.imports.MediumEditorStyles", ["messages.blocks.imports.text"
         // Styles is an array with objects
         // object is of type {value:"", text""}
         // value = "p:red" -> text before the colon is the tag, text after the colon are the classes that will be added
-        // nothing after colon will remove allm classes, nothing before colon will not touch the tag
+        // nothing after colon will remove all classes, nothing before colon will not touch the tag
         // text is the text in the dropdown
         MediumEditor.setStylePickerStyles([
 
@@ -40,6 +40,12 @@ base.plugin("stralo.imports.MediumEditorStyles", ["messages.blocks.imports.text"
 
             {text: null, value: '<li class="dropdown-header">' + TextMessages.styles_sectionText + '</li>'},
             {text: TextMessages.styles_p, value: "p:"},
+            {text: null, value: '<li role="separator" class="divider"></li>'},
+
+            {text: null, value: '<li class="dropdown-header">' + StraloMessages.widgetTextStyles_sectionTypography + '</li>'},
+            {text: StraloMessages.widgetTextStyles_blockquote, value: "blockquote:"},
+            {text: StraloMessages.widgetTextStyles_pre, value: "pre:"},
+            {text: StraloMessages.widgetTextStyles_samp, value: "samp:"},
             {text: null, value: '<li role="separator" class="divider"></li>'},
 
             // {text: null, value: '<li class="dropdown-header">' + RorMessages.widgetTextStyles_sectionButtons + '</li>'},

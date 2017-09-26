@@ -9,7 +9,7 @@ Please head over to the [Stralo website](http://www.stralo.com) for all informat
 
 ## Quick start
 
-If you're on a UNIX system, try to run quickstart.sh to bootstrap a local installation or just execute the one-liner below:
+If you're on a UNIX system, try to run quickstart.sh to bootstrap a local installation or just execute the one-liner below (which basically does the same):
 
 `sh <(curl -sL https://git.io/stralostart)` 
 
