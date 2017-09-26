@@ -1,4 +1,4 @@
-Stralo website
+Stralo
 -----------------
 This is the source code of the [stralo.com](http://www.stralo.com) website.
 
@@ -11,7 +11,7 @@ Please head over to the [Stralo website](http://www.stralo.com) for all informat
 
 If you're on a UNIX system, try to run quickstart.sh to bootstrap a local installation or just execute the one-liner below:
 
-`sh <(curl -s https://raw.githubusercontent.com/republic-of-reinvention/com.stralo.site/master/quickstart.sh)` 
+`sh <(curl -sL https://git.io/stralostart)` 
 
 ## For more information
 
