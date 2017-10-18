@@ -96,9 +96,9 @@
         </core>
 
         <media>
-            <webhdfs>
+            <hdfs>
                 <enable-auto-proxy>true</enable-auto-proxy>
-            </webhdfs>
+            </hdfs>
 
             <watch>
                 <grid-processor>
