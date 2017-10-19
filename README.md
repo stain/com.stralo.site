@@ -9,9 +9,13 @@ Please head over to the [Stralo website](http://www.stralo.com) for all informat
 
 ## Quick start
 
-If you're on a UNIX system, try to run quickstart.sh to bootstrap a local installation or just execute the one-liner below (which basically does the same):
+If you're on a UNIX system, try to run `quickstart.sh` to bootstrap a local installation or just execute the one-liner below (which basically does the same):
 
 `sh <(curl -sL https://git.io/stralostart)` 
+
+Alternatively, if you've got [Docker](https://www.docker.com/) installed, then try:
+
+    docker run -p 8080:8080 stain/stralo
 
 ## For more information
 
