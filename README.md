@@ -17,6 +17,15 @@ Alternatively, if you've got [Docker](https://www.docker.com/) installed, then t
 
     docker run -p 8080:8080 stain/stralo
 
+Wait for the output to display the log-string that look like:
+
+    INFO  [o.e.j.s.Server] Started @...ms'
+
+Then initialize the administrator user by surfing to http://localhost:8080/users/init
+afterwhich you can log in at  http://localhost:8080/users/init with
+username `admin` and password `admin123` to go ahead and create your first page!
+
+
 ## For more information
 
 * [Stralo website](http://www.stralo.com)
